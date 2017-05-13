@@ -16,6 +16,4 @@ test:
 
 production:
   <<: *default
-  database: friendpod_production
-  username: friendpod
-  password: <%= ENV['FRIENDPOD_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
