@@ -13,8 +13,3 @@ development:
 test:
   <<: *default
   database: friendpod_test
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  url: <%= ENV['DATABASE_URL'] %>
