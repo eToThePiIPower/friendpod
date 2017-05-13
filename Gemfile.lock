@@ -184,6 +184,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   byebug
   coffee-rails (~> 4.1.0)
   devise
