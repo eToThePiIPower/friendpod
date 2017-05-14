@@ -3,7 +3,8 @@ require 'json'
 
 class NccosController < ApplicationController
   def setup_call
-    Call.create(number: params[:number])
+    friend = User.find_by(id: params[:id])
+    Call.create(number: friend.number)
   end
 
   def generate_ncco
