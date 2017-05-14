@@ -1,7 +1,11 @@
 <% if @friend %>
+<main class="mw6 center">
+<h1>Congratulations, You Match!</h1>
+
   <p>You are <%= @friend.email %> are a match!</p>
   <p>We should set up a call!</p>
-  <%= link_to "Call Now", ncco_path + '?' + {id: @friend.id}.to_param, method: :post %>
+  <%= link_to "Call Now", ncco_path + '?' + {id: @friend.id}.to_param, method: :post, class: "f6 bg-white ba b--black-10 dim pointer pv1 ph3 black-60" %>
+</main>
 <% else %>
   <p>You need to match first</p>
 <% end %>
