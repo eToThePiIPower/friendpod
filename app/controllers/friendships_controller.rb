@@ -1,11 +1,9 @@
 class FriendshipsController < ApplicationController
   def create
     friend = User.find(params[:friend_id])
-    if current_user.friends.include? friend
-      render :show, friend_id: friend.id
-    elsif current_user.requested_friends.include? friend
+    if current_user.requested_friends.include? friend
       current_user.accept_request friend
-      render :show, friend_id: friend.id
+      redirect_to friends_path(friend_id: friend.id)
     else
       current_user.friend_request friend
       redirect_to matches_path
@@ -13,9 +11,8 @@ class FriendshipsController < ApplicationController
   end
 
   def show
-    friend = User.find(params[:friend_id]) 
-    if current_user.friends.include? friend
-      @friend = friend
+    if current_user.friends.include? User.find_by(id: params[:friend_id])
+      @friend = User.find_by(id: params[:friend_id])
     end
   end
 end

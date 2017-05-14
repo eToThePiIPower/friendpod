@@ -1,2 +1,6 @@
-<p>You are <%= @friend.email %> are a match!</p>
-<p>We should set up a call!</p>
+<% if @friend %>
+  <p>You are <%= @friend.email %> are a match!</p>
+  <p>We should set up a call!</p>
+<% else %>
+  <p>You need to match first</p>
+<% end %>
