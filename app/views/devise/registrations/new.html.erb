@@ -1,49 +1,45 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<main class="pa4 black-80">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "measure center") do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+    <legend class="f4 fw6 ph0 mh0">Sign Up</legend>
+    <div class="mt3">
+      <%= f.label :email, class: "db fw6 lh-copy f6" %>
+      <%= f.email_field :email, class: "pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" %>
+    </div>
+    <div class="mv3">
+      <%= f.label :password, class: "db fw6 lh-copy f6" %>
+      <%= f.password_field :password, class: "b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" %>
+    </div>
+    <div class="mv3">
+      <%= f.label :password_confirmation, class: "db fw6 lh-copy f6" %>
+      <%= f.password_field :password_confirmation, class: "b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div class="mt3">
+      <%= f.label :name, class: "db fw6 lh-copy f6" %>
+      <%= f.text_field :name, class: "pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" %>
+    </div>
+    <div class="mt3">
+      <%= f.label :number, class: "db fw6 lh-copy f6" %>
+      <%= f.text_field :number, class: "pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" %>
+    </div>
+    <div class="mt3">
+      <%= f.label :interest_list, class: "db fw6 lh-copy f6" %>
+      <%= f.text_field :interest_list, class: "pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" %>
+    </div>
+    <div class="mt3">
+      <%= f.label :age, class: "db fw6 lh-copy f6" %>
+      <%= f.number_field :age, class: "pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </fieldset>
+  <div class="">
+    <%= f.submit "Sign up", class: "b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" %>
   </div>
-
-  <div class="field">
-    <%= f.label :number %><br />
-    <%= f.text_field :number %>
-  </div>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :interest_list %><br />
-    <%= f.text_field :interest_list %>
-  </div>
-
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="lh-copy mt3">
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</main>
