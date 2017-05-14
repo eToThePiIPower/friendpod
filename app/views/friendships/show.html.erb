@@ -2,6 +2,22 @@
 <header class="flex items-center justify-center pa4 bg-lightest-blue navy">
   <h1 class="mt0 mb0">Congratulations, You Match!</h1>
 </header>
+
+<article class="center dt w-50 ba b--black-05 pb2 mt2" href="#0">
+  <div class="dtc w2 w3-ns v-mid">
+    <img src="<%= @friend.gravatar %>" class="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"/>
+  </div>
+  <div class="dtc v-mid pl3">
+    <h1 class="f6 f5-ns fw6 lh-title black mv0"><%= @friend.name %></h1>
+    <h2 class="f6 fw4 mt0 mb0 black-60"><%= @friend.censored_email %></h2>
+    <h2 class="f6 fw4 mt0 mb0 black-60">
+      <% @friend.interests.each do |interest| %>
+        <span class="f7 link dim br-pill ph2 pv1 mt1 dib white bg-black"><%= interest %></span>
+      <% end %>
+    </h2>
+  </div>
+</article>
+
 <main class="mw6 center tc">
   <p>You and <%= @friend.name %> are a match!</p>
   <p>We should set up a call!</p>
@@ -10,5 +26,5 @@
     class: "f2 bg-black ba b--black-10 dim pointer pv1 ph3 white" %>
 </main>
 <% else %>
-  <p>You need to match first</p>
+  <p>You need to @friend first</p>
 <% end %>
