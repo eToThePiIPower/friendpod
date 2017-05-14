@@ -1,0 +1,10 @@
+<h1>Your Matches</h1>
+
+<ul>
+<% @matches.each do |match| %>
+  <li>
+    <p><%= match.email %></p>
+    <p><%= match.interest_list %></p>
+  </li>
+<% end %>
+</ul>
