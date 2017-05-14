@@ -12,9 +12,11 @@
     <h2 class="f6 fw4 mt0 mb0 black-60"><%= match.interests.join(', ') %></h2>
   </div>
   <div class="dtc v-mid">
-    <form class="w-100 tr">
-      <%= button_to "+ Like", friends_path(friend_id: match.id), method: :post, class: "f6 button-reset bg-white ba b--black-10 dim pointer pv1 black-60" %>
-    </form>
+    <% if current_user.friends_with? match %>
+    <%= link_to "+ Contact", friends_path(friend_id: match.id), class: "f6 bg-white ba b--black-10 dim pointer pv1 ph3 black-60" %>
+    <% else %>
+    <%= link_to "+ Like", friends_path(friend_id: match.id), method: :post, class: "f6 bg-white ba b--black-10 dim pointer pv1 ph3 black-60" %>
+    <% end %>
   </div>
 </article>
 <% end %>
