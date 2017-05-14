@@ -11,6 +11,7 @@ gem 'devise'
 gem 'devise-ios-rails'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
+gem 'tachyons-rails'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'jbuilder', '~> 2.0'
