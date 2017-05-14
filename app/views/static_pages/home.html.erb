@@ -1,17 +1,17 @@
 <section class="pb5">
-  <article class="center pv4 ph4 br2 ba b--light-blue bg-lightest-blue">
+  <article class="center pv4 ph4 br2 ba b--darkest-green bg-dark-green">
     <div class="dt-ns dt--fixed-ns w-100">
       <div class="pa3 pa4-ns dtc-ns v-mid">
         <div>
-          <h2 class="fw4 blue mt0 mb3">Welcome to FriendPod!</h2>
-          <p class="black-70 measure lh-copy mv0">
+          <h2 class="fw4 washed-green mt0 mb3">Welcome to FriendPod!</h2>
+          <p class="light-gray measure lh-copy mv0">
           Find people nearby who want to hang out...with you!
           </p>
         </div>
       </div>
       <% if user_signed_in? %>
       <div class="pa3 pa4-ns dtc-ns v-mid">
-        <%= link_to "Show your matches now!", matches_path, class: "no-underline f6 tc db w-100 pv3 bg-animate bg-blue hover-bg-dark-blue white br2" %>
+        <%= link_to "Show your matches now!", matches_path, class: "no-underline f6 tc db w-100 pv3 bg-animate bg-green hover-bg-light-green white hover-green br2" %>
       </div>
       <% else %>
       <div class="pa3 pa4-ns dtc-ns v-mid">

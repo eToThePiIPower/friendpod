@@ -1,5 +1,5 @@
 <% if @friend %>
-<header class="flex items-center justify-center pa4 bg-lightest-blue navy">
+<header class="flex items-center justify-center pa4 bg-dark-green washed-green">
   <h1 class="mt0 mb0">Congratulations, You Match!</h1>
 </header>
 
@@ -12,7 +12,7 @@
     <h2 class="f6 fw4 mt0 mb0 black-60"><%= @friend.censored_email %></h2>
     <h2 class="f6 fw4 mt0 mb0 black-60">
       <% @friend.interests.each do |interest| %>
-        <span class="f7 link dim br-pill ph2 pv1 mt1 dib white bg-black"><%= interest %></span>
+        <span class="f7 link dim br-pill ph2 pv1 mt1 dib washed-green bg-dark-green"><%= interest %></span>
       <% end %>
     </h2>
   </div>
@@ -23,7 +23,7 @@
   <p>We should set up a call!</p>
   <%= link_to "Prepare Call Now", ncco_path + '?' + {id: @friend.id}.to_param,
     method: :post,
-    class: "f2 bg-black ba b--black-10 dim pointer pv1 ph3 white" %>
+    class: "f2 bg-dark-green ba b--black-10 dim pointer pv1 ph3 washed-green" %>
 </main>
 
 <section class="mw6 center tc">
@@ -33,7 +33,7 @@
       <textarea id="message" name="message" class="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2" aria-describedby="message-desc"></textarea>
       <%= hidden_field_tag :id, @friend.id %>
       <small id="message-desc" class="f6 black-60">SMS Messages should be 140 characters or under. Be kind!</small>
-      <%= submit_tag "Send message", class: "f6 bg-black ba b--black-10 dim pointer pv1 ph3 white" %>
+      <%= submit_tag "Send message", class: "f6 bg-dark-green ba b--black-10 dim pointer pv1 ph3 washed-green" %>
     </div>
   <% end %>
 </section>
