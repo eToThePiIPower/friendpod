@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def interest_list
+    self.interests.join(', ')
+  end
+
   def as_json(options = {  })
     h = super(options)
     h[:interests] = self.interest_list
