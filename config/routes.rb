@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'ncco', to: 'nccos#generate_ncco'
   post 'ncco', to: 'nccos#setup_call'
+  post 'sms', to: 'nccos#send_text'
 
   root to: 'static_pages#home'
 end

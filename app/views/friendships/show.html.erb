@@ -25,6 +25,16 @@
     method: :post,
     class: "f2 bg-black ba b--black-10 dim pointer pv1 ph3 white" %>
 </main>
+
+<section class="mw6 center tc">
+  <p>Or send a text message</p>
+  <%= form_tag '/sms' do %>
+    <%= text_field_tag :message %>
+    <%= hidden_field_tag :id, @friend.id %>
+    <%= submit_tag %>
+  <% end %>
+</section>
+
 <% else %>
   <p>You need to match first</p>
 <% end %>

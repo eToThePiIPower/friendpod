@@ -20,4 +20,21 @@ class NccosController < ApplicationController
     ]
     render json: ncco.to_json
   end
+
+  def send_text
+    friend = User.find_by(id: params[:id])
+    message = params[:message]
+    uri = URI.parse("https://rest.nexmo.com/sms/json")
+    params = {
+      'api_key' => ENV['API_KEY'],
+      'api_secret' => ENV['API_SECRET'],
+      'to' => friend.number,
+      'from' => '12035338536',
+      'text': message
+    }
+
+    Net::HTTP.post_form(uri, params)
+    
+    redirect_to root_path
+  end
 end
