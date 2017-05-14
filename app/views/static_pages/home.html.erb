@@ -1,24 +1,47 @@
-<section class="pb5">
-  <article class="center pv4 ph4 br2 ba b--darkest-green bg-dark-green">
+<section>
+  <article class="center pv4 ph4 friendpod-green">
     <div class="dt-ns dt--fixed-ns w-100">
-      <div class="pa3 pa4-ns dtc-ns v-mid">
+      <img src="/friend.png">
+      <div class="pa3 pa4-ns dtc-ns v-mid w-75">
         <div>
-          <h2 class="fw4 washed-green mt0 mb3">Welcome to FriendPod!</h2>
-          <p class="light-gray measure lh-copy mv0">
-          Find people nearby who want to hang out...with you!
+          <h2 class="f1 fw4 dark-green mt0 mb3">Welcome to Friend!</h2>
+          <p class="f3 dark-green measure lh-copy mv0">
+          Connect and build friendships.
           </p>
         </div>
       </div>
+    </div>
+    <div class="dt-ns td--fixed-ns w-100">
       <% if user_signed_in? %>
       <div class="pa3 pa4-ns dtc-ns v-mid">
-        <%= link_to "Show your matches now!", matches_path, class: "no-underline f6 tc db w-100 pv3 bg-animate bg-green hover-bg-light-green white hover-green br2" %>
+        <%= link_to "Show your matches now!", matches_path, class: "no-underline f6 tc db w-100 pv3 bg-animate bg-green hover-bg-light-green white br2" %>
       </div>
       <% else %>
       <div class="pa3 pa4-ns dtc-ns v-mid">
-        <%= link_to "Sign up for free", new_user_registration_path, class: "no-underline f6 tc db w-100 pv3 bg-animate bg-blue hover-bg-dark-blue white br2" %>
+        <%= link_to "Sign up for free", new_user_registration_path, class: "no-underline f6 tc db w-100 pv3 bg-animate bg-green hover-bg-light-green white br2" %>
       </div>
       <% end %>
-    </div>
+    </div>  
   </article>
 </section>
 
+<div class="dt-ns dt--fixed-ns">
+  <div class="dtc-ns tc pv4 bg-black-10">
+    <h3>Find friends</h3>
+    <p class="ma4">
+      People near your with shared interests. Only mutual likes make a match.
+    </p>
+  </div>
+  <div class="dtc-ns tc pv4 bg-black-05">
+    <h3>Explore new connections</h3>
+    <p class="ma4">
+      In a new city? Travelling? Find a friend to hang with.
+    </p>
+  </div>
+  <div class="dtc-ns tc pv4 bg-black-10">
+    <h3>Private calls and SMS</h3>
+    <p class="ma4">
+      Send SMS and voice calls with your connections, without sharing your number.
+    </p>
+  </div>
+</div>

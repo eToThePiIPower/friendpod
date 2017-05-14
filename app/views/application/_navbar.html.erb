@@ -1,22 +1,22 @@
-<nav class="db dt-l w-100 border-box pa3 ph5-l friendpod-green">
-  <a class="db dtc-l v-mid mid-gray link dim w-100 w-25-l tc t1-l mb2 mb0-l" href="/">
-    FriendPod
+<nav class="db dt-l w-100 border-box pa3 ph5-l bg-dark-green washed-green">
+  <a class="db dtc-l v-mid light-green link dim w-100 w-25-l tc t1-l mb2 mb0-l" href="/">
+    Friend
   </a>
   <div class="db dtc-1 v-mid w-100 w-75-l tc tr-l">
 
   <% if user_signed_in? %>
     <%= link_to "Log out", destroy_user_session_path, method: :delete,
-      class: "link dim dark-gray f6 f5-l dib mr3 mr4-l"
+      class: "link dim light-green f6 f5-l dib mr3 mr4-l"
     %>
     <%= link_to "Edit account", edit_user_registration_path,
-      class: "link dim dark-gray f6 f5-l dib mr3 mr4-l"
+      class: "link dim light-green f6 f5-l dib mr3 mr4-l"
     %>
   <% else %>
     <%= link_to "Log in", new_user_session_path,
-      class: "link dim dark-gray f6 f5-l dib mr3 mr4-l"
+      class: "link dim light-green f6 f5-l dib mr3 mr4-l"
     %>
     <%= link_to "Sign Up", new_user_registration_path,
-      class: "link dim dark-gray f6 f5-l dib mr3 mr4-l"
+      class: "link dim light-green f6 f5-l dib mr3 mr4-l"
     %>
   <% end %>
 
