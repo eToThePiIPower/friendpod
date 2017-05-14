@@ -20,4 +20,8 @@ class User < ActiveRecord::Base
     gravatar_id = Digest::MD5.hexdigest(self.email.downcase)
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=48"
   end
+
+  def censored_email
+    self.email.first + "*"*7 + "@" + "*"*5 + self.email.last
+  end
 end
