@@ -1,6 +1,7 @@
 <% if @friend %>
   <p>You are <%= @friend.email %> are a match!</p>
   <p>We should set up a call!</p>
+  <%= link_to "Call Now", ncco_path + '?' + {number: @friend.number}.to_param, method: :post %>
 <% else %>
   <p>You need to match first</p>
 <% end %>

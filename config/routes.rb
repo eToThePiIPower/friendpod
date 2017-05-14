@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   post 'friends', to: 'friendships#create'
   get 'friends', to: 'friendships#show'
 
+  get 'ncco', to: 'nccos#generate_ncco'
+  post 'ncco', to: 'nccos#setup_call'
+
   root to: 'static_pages#home'
 end
