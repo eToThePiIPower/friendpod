@@ -4,7 +4,11 @@
 <% @matches.each do |match| %>
   <li>
     <p><%= match.email %></p>
-    <p><%= match.interest_list %></p>
+    <ul>
+    <% match.interests.each do |interest| %></p>
+      <li><%= interest %></li>
+    <% end %>
+    </ul>
     <%= link_to "Swipe Right", friends_path(friend_id: match.id), method: :post %>
   </li>
 <% end %>
