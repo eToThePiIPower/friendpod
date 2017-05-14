@@ -27,11 +27,14 @@
 </main>
 
 <section class="mw6 center tc">
-  <p>Or send a text message</p>
-  <%= form_tag '/sms' do %>
-    <%= text_field_tag :message %>
-    <%= hidden_field_tag :id, @friend.id %>
-    <%= submit_tag %>
+  <%= form_tag '/sms', class: "pa4 black-80" do %>
+    <div>
+      <label for="message" class="f6 b db mb2">Or send a text message <span class="normal black-60">(optional)</span></label>
+      <textarea id="message" name="message" class="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2" aria-describedby="message-desc"></textarea>
+      <%= hidden_field_tag :id, @friend.id %>
+      <small id="message-desc" class="f6 black-60">SMS Messages should be 140 characters or under. Be kind!</small>
+      <%= submit_tag "Send message", class: "f6 bg-black ba b--black-10 dim pointer pv1 ph3 white" %>
+    </div>
   <% end %>
 </section>
 
