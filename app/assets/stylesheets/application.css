@@ -14,3 +14,7 @@
  *= require_self
  *= require tachyons
  */
+
+.friendpod-green {
+  background-color: #efffe9
+}
