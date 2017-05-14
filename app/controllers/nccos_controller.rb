@@ -24,6 +24,7 @@ class NccosController < ApplicationController
   def send_text
     friend = User.find_by(id: params[:id])
     message = params[:message]
+    message = "#{friend.name} says: #{message}"
     uri = URI.parse("https://rest.nexmo.com/sms/json")
     params = {
       'api_key' => ENV['API_KEY'],
