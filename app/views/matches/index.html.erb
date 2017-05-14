@@ -7,15 +7,19 @@
     <img src="http://mrmrs.io/photos/p/2.jpg" class="ba b--black-10 db br2 w2 w3-ns h2 h3-ns"/>
   </div>
   <div class="dtc v-mid pl3">
-    <h1 class="f6 f5-ns fw6 lh-title black mv0"><%= match.email %></h1>
-    <h2 class="f6 fw4 mt0 mb0 black-60"><%= match.name %></h2>
-    <h2 class="f6 fw4 mt0 mb0 black-60"><%= match.interests.join(', ') %></h2>
+    <h1 class="f6 f5-ns fw6 lh-title black mv0"><%= match.name %></h1>
+    <h2 class="f6 fw4 mt0 mb0 black-60"><%= match.email %></h2>
+    <h2 class="f6 fw4 mt0 mb0 black-60">
+      <% match.interests.each do |interest| %>
+        <span class="f7 link dim br-pill ph2 pv1 mt1 dib white bg-black"><%= interest %></span>
+      <% end %>
+    </h2>
   </div>
   <div class="dtc v-mid">
     <% if current_user.friends_with? match %>
-    <%= link_to "+ Contact", friends_path(friend_id: match.id), class: "f6 bg-white ba b--black-10 dim pointer pv1 ph3 black-60" %>
+    <%= link_to "+ Contact", friends_path(friend_id: match.id), class: "f6 bg-white ba b--black-10 dim pointer pv1 ph3 black-60 fr" %>
     <% else %>
-    <%= link_to "+ Like", friends_path(friend_id: match.id), method: :post, class: "f6 bg-white ba b--black-10 dim pointer pv1 ph3 black-60" %>
+    <%= link_to "+ Like", friends_path(friend_id: match.id), method: :post, class: "f6 bg-white ba b--black-10 dim pointer pv1 ph3 black-60 fr" %>
     <% end %>
   </div>
 </article>
