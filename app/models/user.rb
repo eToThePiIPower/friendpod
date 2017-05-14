@@ -15,4 +15,9 @@ class User < ActiveRecord::Base
     h[:interests] = self.interest_list
     h
   end
+
+  def gravatar
+    gravatar_id = Digest::MD5.hexdigest(self.email.downcase)
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=48"
+  end
 end
